@@ -29,7 +29,7 @@ public class UniqueValidator implements ConstraintValidator<Unique, String> {
         var uniqueHandler = (UniqueHandler) object;
 
         if(operation == Operation.UPDATE) {
-            String[] tmps = uri.toUriString().split("/"); //TODO zastanowic sie nad tym - sprobowac zrobic to bardziej generycznie
+            String[] tmps = uri.toUriString().split("/");
             Long id = Long.parseLong(tmps[tmps.length - 1]);
             return uniqueHandler.isUnique(fieldName, value, id);
         }
