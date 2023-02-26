@@ -15,6 +15,7 @@ public @interface Unique {
     Class<?> handler();;
     String message() default "{unique.error.message}";
     Operation operation() default Operation.CREATE;
+    String[] ignorePaths() default {};
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
